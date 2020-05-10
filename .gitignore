@@ -1,0 +1,8 @@
+src
+logs
+node_modules
+.vscode
+server
+.mcproject
+config.js
+pack.mcmeta
