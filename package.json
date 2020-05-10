@@ -11,6 +11,6 @@
   },
   "scripts": {
     "run": "node .",
-    "build": "nexe index.js -o Teak1McBuilder-1.0.4.exe -r index.js"
+    "build": "nexe index.js -o Teak1McBuilder-1.0.5.exe -r index.js"
   }
 }

@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const cp = require("child_process");
 if (process.argv[2]) {
     if (["java", "bedrock"].includes(process.argv[2])) {
 
@@ -54,6 +53,7 @@ if (process.argv[2]) {
     }
 
 } else {
+    let buildid = 0;
     if (!fs.existsSync("./src")) {
         log("did not find src folder in directory");
         process.exit(1);
