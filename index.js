@@ -186,8 +186,11 @@ if (process.argv[2]) {
             if (line == "}") return "";
             if (/^function (.+)\s*{/.test(line)) {
                 const _name = /^function (.+)\s*{/.exec(line)[1].trim();
-                const content = getBlock(lines, noop);
-                if (!noop) functions[_name] = content;
+                let content = getBlock(lines, noop);
+                if (Array.isArray(content)) {
+                    content = content.join("\n")
+                }
+                if (!noop) functions[_name] = content.replace(/\$block/g, name + ":" + _name).split("\n");
                 return "#def function " + name + ":" + _name;
             } else if (/(execute .+?)\s*{$/.test(line)) {
                 if (noop) {
